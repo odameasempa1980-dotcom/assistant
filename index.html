@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My AI Assistant</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #101827;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+    .app {
+      max-width: 450px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #1e293b;
+      border-radius: 18px;
+    }
+    h1 { color: #60a5fa; }
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      margin: 12px 0;
+    }
+    button {
+      padding: 12px 24px;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    #reply { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1>My AI Assistant</h1>
+    <p>Hello! Welcome to your personal AI assistant.</p>
+    <input id="question" placeholder="Type your message here">
+    <button onclick="reply()">Send</button>
+    <p id="reply">Your conversation will appear here.</p>
+  </div>
+  <script>
+    function reply() {
+      const question = document.getElementById("question").value.trim();
+      if (!question) {
+        document.getElementById("reply").textContent =
+          "Please type a message first.";
+        return;
+      }
+      document.getElementById("reply").textContent =
+        "You said: " + question +
+        "\n\nYour AI connection will be added next!";
+    }
+  </script>
+</body>
+</html>
